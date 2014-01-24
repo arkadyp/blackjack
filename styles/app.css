@@ -11,6 +11,6 @@
   background-color: black;
 }
 
-.hand {
+.hand, .playerHand {
   overflow: auto;
 }
