@@ -7,8 +7,9 @@ class window.Hand extends Backbone.Collection
     @score = array[0].get('value') + array[1].get('value');
 
   hit: -> 
-    @add(@deck.pop()).last()
+    @add(@deck.pop())
     @updateScore()
+    @last()
 
   updateScore: ->
     #count number of aces in hand
@@ -19,8 +20,11 @@ class window.Hand extends Backbone.Collection
     newCardValue = @.models[@.length - 1].get('value')
     @score += newCardValue;
 
-    [@score]
-    #if aceCount then [score, score + 10] else [score]
+    while(aceCount > 0)
+      @score += 10 if @score + 10 <= 21
+      aceCount--
+    
+    @trigger('scoreUpdated')
 
   getScore: ->
     @score
