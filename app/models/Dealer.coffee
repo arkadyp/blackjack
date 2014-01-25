@@ -1,1 +1,1 @@
-class window.Player extends window.Hand
+class window.Dealer extends window.Hand

@@ -1,1 +1,1 @@
-class window.PlayerView extends window.HandView
+class window.DealerView extends window.HandView
