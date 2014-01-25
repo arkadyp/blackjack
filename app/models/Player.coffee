@@ -9,22 +9,22 @@ class window.Player extends window.Hand
 
   checkBust: ->
     if @score > 21
-      @betAmount = 0;
-      @trigger('bust')
+      @betAmount = 0
       @result = 'lose'
       @trigger('resultChanged')
 
 
   evaluateOutcome: (dealerScore) =>
     if @score > dealerScore or dealerScore > 21
-      @cashAmount += @betAmount
+      @cashAmount += @betAmount * 2
       @result = 'win'
     else if @score is dealerScore
-      @betAmount = 0
+      @cashAmount += @betAmount
       @result = 'tie'
     else
-      @betAmount = 0
       @result = 'lose'
+    
+    @betAmount = 0
     @trigger('resultChanged')
 
   getResult: ->
