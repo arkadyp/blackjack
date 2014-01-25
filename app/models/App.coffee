@@ -7,5 +7,5 @@ class window.App extends Backbone.Model
     @set 'dealerHand', deck.dealDealer()
 
     @get('playerHand').on 'bust', => 
-      @get('dealerHand').models[0].flip()
+      @get('dealerHand').flip()
 
