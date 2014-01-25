@@ -6,7 +6,6 @@ class window.Dealer extends window.Hand
 
     while @score < 17
       @hit()
-      console.log @score
 
   flip: =>
     @models[0].flip()
