@@ -7,5 +7,7 @@ class window.Dealer extends window.Hand
     while @score < 17
       @hit()
 
+    @trigger('evaluateOutcome')
+
   flip: =>
     @models[0].flip()
