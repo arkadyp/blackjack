@@ -10,4 +10,4 @@ class window.Deck extends Backbone.Collection
 
   dealPlayer: -> playerHand = new Player [ @pop(), @pop() ], @
 
-  dealDealer: -> new Hand [ @pop().flip(), @pop() ], @, true
+  dealDealer: -> new Dealer [ @pop().flip(), @pop() ], @, true
