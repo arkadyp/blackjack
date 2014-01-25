@@ -40,3 +40,7 @@
 .playerStats {
   width: 300px;
 }
+
+.newGame {
+  display: none;
+}
