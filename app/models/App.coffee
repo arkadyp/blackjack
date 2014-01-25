@@ -6,5 +6,5 @@ class window.App extends Backbone.Model
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
 
-    @get('playerHand').on 'bust', =>
-      console.log 'bust from App.coffee'
+    @get('playerHand').on 'bust', => @trigger('playerBust')
+
