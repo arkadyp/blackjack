@@ -5,6 +5,9 @@ class window.PlayerView extends window.HandView
   initialize: ->
     @collection.on 'scoreUpdated', => @render()
     @collection.on 'scoreUpdated', => @collection.checkBust()
+    @collection.on 'bust', => 
+      @$el.find('.game-result').text('You busted! You lose!')
+      @$el.find('.playerButtons').hide();
     
     #set up html
     @$el.html('<h2>Player (<span class="score"></span>)</h2>')
