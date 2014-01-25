@@ -4,7 +4,7 @@ class window.PlayerView extends window.HandView
 
   initialize: ->
     super();
-    @collection.on 'add remove change', => @collection.checkBust()
+    @collection.on 'scoreUpdated', => @collection.checkBust()
 
 
   #todo: switch to mustache
