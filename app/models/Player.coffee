@@ -2,6 +2,8 @@ class window.Player extends window.Hand
 
   initialize: (array, @deck, @isDealer) ->
     super(array, @deck, @isDealer)
+    @cashAmount = 100
+    @betAmount = 0
     @result = 'pending'
 
 
