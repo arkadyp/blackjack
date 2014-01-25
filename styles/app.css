@@ -1,3 +1,7 @@
+.body {
+  font-family: Arial
+}
+
 .card {
   float: left;
   border: solid 1px black;
@@ -9,9 +13,30 @@
 }
 
 .card.covered {
-  background-image: url("cards/card-back.png");
+  background-image: url("cards/card-back.png");.
 }
 
 .hand, .playerHand {
   overflow: auto;
+}
+
+.playerStats {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.playerButtons, .playerCards, .playerStats {
+  padding: 10px;
+  display: block;
+}
+
+.playerCards {
+  height: 150px;
+}
+
+.playerStats {
+  width: 300px;
 }
