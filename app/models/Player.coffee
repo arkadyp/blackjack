@@ -13,7 +13,12 @@ class window.Player extends window.Hand
 
 
   evaluateOutcome: (dealerScore) =>
-    @result = if @score > dealerScore or dealerScore > 21 then 'win' else 'lose'
+    if @score > dealerScore or dealerScore > 21
+      @result = 'win'
+    else if @score is dealerScore
+      @result = 'tie'
+    else
+      @result = 'lose'
     @trigger('resultChanged')
 
   getResult: ->
