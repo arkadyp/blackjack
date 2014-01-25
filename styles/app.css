@@ -5,10 +5,11 @@
   border-radius: 5px;
   height: 140px;
   margin-right: 20px;
+  background-size: 100%;
 }
 
-.covered {
-  background-color: black;
+.card.covered {
+  background-image: url("cards/card-back.png");
 }
 
 .hand, .playerHand {
