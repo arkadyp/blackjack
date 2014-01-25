@@ -1,5 +1,9 @@
 class window.Dealer extends window.Hand
 
+  initialize: (array, @deck, @isDealer) ->
+    super(array, @deck, @isDealer)
+    @firstCardHidden = true
+
   dealOut: =>
     #reveal card
     @flip()
@@ -10,4 +14,8 @@ class window.Dealer extends window.Hand
     @trigger('evaluateOutcome')
 
   flip: =>
+    @firstCardHidden = false
     @models[0].flip()
+
+  getDealerScore: =>
+    if @firstCardHidden then @score - @models[0].get('value') else @score
