@@ -23,8 +23,8 @@ class window.PlayerView extends window.HandView
 
     #set up html
     @$el.html('<h2>Player (<span class="score"></span>)</h2>')
-    @$el.append('<div class="playerButtons"><button class="hit-button">Hit</button> <button class="stand-button">Stand</button><div>')
     @$el.append('<div class="playerCards"></div>')
+    @$el.append('<div class="playerButtons"><button class="hit-button">Hit</button> <button class="stand-button">Stand</button><div>')
 
     @$el.append('<div class="playerStats"><div>')
     @$el.find('.playerStats').html("<div class='cashAmount'>Cash: #{@cashAmount}</div>")
