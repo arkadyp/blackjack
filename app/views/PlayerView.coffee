@@ -3,8 +3,6 @@ class window.PlayerView extends window.HandView
   className: 'playerHand'
 
   initialize: ->
-    @this = @
-
     @collection.on 'scoreUpdated change', =>
       @collection.checkBust()
       @render()
