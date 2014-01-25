@@ -11,3 +11,7 @@ class window.App extends Backbone.Model
 
     @get('playerHand').on 'stand', => 
       @get('dealerHand').dealOut()
+
+    @get('dealerHand').on 'evaluateOutcome', =>
+      dealerScore = @get('dealerHand').getScore()
+      @get('playerHand').evaluateOutcome(dealerScore)
