@@ -3,11 +3,11 @@ class window.AppView extends Backbone.View
   template: _.template '
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
+    <div class="results"> Game Result: <span class="game-result">Pending</span></div>
   '
 
   initialize: -> 
     @render()
-    @model.on 'playerBust', => @$('.game-result').text('You busted! You lose!')
 
   render: ->
     @$el.children().detach()
