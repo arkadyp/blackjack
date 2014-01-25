@@ -7,10 +7,18 @@ class window.PlayerView extends window.HandView
       @collection.checkBust()
       @render()
 
+    @collection.on 'change:result', =>
+      console.log 'result changed'
+
     @collection.on 'bust', =>
       @$el.find('.game-result').text('You busted! You lose!')
       @$el.find('.playerButtons').hide();
-    
+
+    @collection.on 'resultChanged', =>
+      result = @collection.getResult()
+      @$el.find('.game-result').text("You #{result}!!")
+
+
     #set up html
     @$el.html('<h2>Player (<span class="score"></span>)</h2>')
     @$el.append('<div class="playerButtons"><button class="hit-button">Hit</button> <button class="stand-button">Stand</button><div>')
