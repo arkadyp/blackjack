@@ -3,9 +3,11 @@ class window.PlayerView extends window.HandView
   className: 'playerHand'
 
   initialize: ->
-    @collection.on 'scoreUpdated', => @render()
-    @collection.on 'scoreUpdated', => @collection.checkBust()
-    @collection.on 'bust', => 
+    @collection.on 'scoreUpdated change', =>
+      @collection.checkBust()
+      @render()
+
+    @collection.on 'bust', =>
       @$el.find('.game-result').text('You busted! You lose!')
       @$el.find('.playerButtons').hide();
     
