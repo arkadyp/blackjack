@@ -24,4 +24,4 @@ class window.PlayerView extends window.HandView
 
   events:
     "click .hit-button": -> @collection.hit()
-    "click .stand-button": -> @collection.stand()
+    "click .stand-button": -> @collection.trigger('stand')

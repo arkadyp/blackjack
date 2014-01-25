@@ -9,3 +9,5 @@ class window.App extends Backbone.Model
     @get('playerHand').on 'bust', => 
       @get('dealerHand').flip()
 
+    @get('playerHand').on 'stand', => 
+      @get('dealerHand').dealOut()
