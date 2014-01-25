@@ -32,9 +32,10 @@ class window.PlayerBetView extends Backbone.View
       betAttempt = @$el.find('input').val() 
       @$el.find('input').val('')
       if 0 < betAttempt <= @collection.cashAmount
-        @collection.betAmout = betAttempt
+        @collection.betAmount = betAttempt
         @collection.cashAmount -= betAttempt
-        @this.render()
+        @render()
+        @collection.trigger('placeBet') #alert App that bet is placed so that cards can be dealt
       else
         alert 'Enter valid bet amount'
 
