@@ -6,6 +6,9 @@ class window.PlayerBetView extends Backbone.View
     @collection.on 'resultChanged', =>
       result = @collection.getResult()
       @$el.find('.game-result').text("You #{result}!!")
+      @$el.find('.newGame').show('slide')
+      @render()
+
 
     #set up html
     @$el.html('<h2>Player</h2>')
@@ -37,6 +40,7 @@ class window.PlayerBetView extends Backbone.View
         @collection.cashAmount -= betAttempt
         @render()
         @collection.trigger('placeBet') #alert App that bet is placed so that cards can be dealt
+        @$el.find('.bet').hide('slide')
       else
         alert 'Enter valid bet amount'
 
