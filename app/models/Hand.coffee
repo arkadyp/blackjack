@@ -20,7 +20,7 @@ class window.Hand extends Backbone.Collection
 
   updateScore: ->
     #count number of aces in hand
-    newCard = @.models[@.length - 1].get('value')
+    newCard = @models[@.length - 1].get('value')
     @hasAce = true if newCard is 1
     @score += newCard
     
