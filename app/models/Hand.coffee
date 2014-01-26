@@ -22,12 +22,16 @@ class window.Hand extends Backbone.Collection
     #count number of aces in hand
     newCard = @models[@.length - 1].get('value')
     @hasAce = true if newCard is 1
+    
+    console.log 'start score: '+@score
     @score += newCard
     
     #check for ace adjustment
-    if @hasAce and @score + 10 <= 21
-      @score += 10
-    @score
+    if @hasAce 
+      if @score + 10 <= 21
+        @score += 10
+      else if @score > 21
+        @score -= 10
 
     @trigger('scoreUpdated')
 
