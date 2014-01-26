@@ -36,6 +36,6 @@ class window.PlayerView extends window.HandView
     
     "click .stand-button": -> 
       @collection.trigger('stand')
-      @$el.find('.playerButtons').hide();
+      @$el.find('.playerButtons').hide()
 
 

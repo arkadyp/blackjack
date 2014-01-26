@@ -23,7 +23,6 @@ class window.Hand extends Backbone.Collection
     newCard = @models[@.length - 1].get('value')
     @hasAce = true if newCard is 1
     
-    console.log 'start score: '+@score
     @score += newCard
     
     #check for ace adjustment
